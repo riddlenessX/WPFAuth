@@ -35,16 +35,19 @@ namespace FirstWPF
 
             if (login.Length < 5)
             {
-                TextBoxLogin.ToolTip = "Это поле введено некорректно! (Логин не менее 5 символов)";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Логин не менее 5 символов";
                 TextBoxLogin.Background = Brushes.DarkRed;
             }
             else if (pass_1.Length < 5)
             {
-                passbox_1.ToolTip = "Это поле введено некорректно! (Пароль не менее 5 символов)";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Пароль не менее 5 символов";
                 passbox_1.Background = Brushes.DarkRed;
             }
             else
             {
+                Error.Visibility = Visibility.Collapsed;
                 TextBoxLogin.Text = string.Empty;
                 TextBoxLogin.Background = Brushes.Transparent;
                 passbox_1.Password = string.Empty;

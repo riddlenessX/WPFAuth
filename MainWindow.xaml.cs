@@ -45,31 +45,32 @@ namespace FirstWPF
 
             if (login.Length < 5)
             {
-                TextBoxLogin.ToolTip = "Это поле введено некорректно! (Логин не менее 5 символов)";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Логин не менее 5 символов";
                 TextBoxLogin.Background = Brushes.DarkRed;
             }
             else if (pass_1.Length < 5)
             {
-                passbox_1.ToolTip = "Это поле введено некорректно! (Пароль не менее 5 символов)";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Пароль не менее 5 символов";
                 passbox_1.Background = Brushes.DarkRed;
-            }
-            else if (pass_2.Length < 5)
-            {
-                passbox_2.ToolTip = "Это поле введено некорректно! (Пароль не менее 5 символов)";
-                passbox_2.Background = Brushes.DarkRed;
             }
             else if (pass_1 != pass_2)
             {
-                passbox_2.ToolTip = "Пароли не совпадают!";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Пароли не совпадают!";
                 passbox_2.Background = Brushes.DarkRed;
             }
             else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
             {
-                TextBoxEmail.ToolTip = "Это поле введено некорректно! (Адрес почты не менее 5 символов, включая '@' и '.')";
+                Error.Visibility = Visibility.Visible;
+                Error.Text = "Адрес почты должен состоять не менее, чем из 5 символов, включая '@' и '.'";
                 TextBoxEmail.Background = Brushes.DarkRed;
             }
             else
             {
+                Error.Text = string.Empty;
+                Error.Visibility = Visibility.Collapsed;
                 TextBoxLogin.Text = string.Empty;
                 TextBoxLogin.Background = Brushes.Transparent;
                 passbox_1.Password = string.Empty;

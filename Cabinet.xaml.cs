@@ -30,19 +30,18 @@ namespace FirstWPF
             db = new ApplicationContext();
 
             List<User> users = db.Users.ToList();
-            string str = "Личные данные:\n\n";
-            int counter = 1;
-            foreach (User user in users)
-            {
-                str += $"Пользователь {counter}. Login: " + user.login + " ";
-                str += "Password: " + user.password + " ";
-                str += "Email: " + user.email + "\n";
-                counter++;
-            }
-            examletext.Text = str;
+
+
+            table.ItemsSource = users;
+            Window.Height += table.ActualHeight*30;
+            this.Height += table.ActualHeight * 30;
 
         }
-
-
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            AuthWindows auth = new AuthWindows();
+            auth.Show();
+            this.Close();
+        }
     }
 }

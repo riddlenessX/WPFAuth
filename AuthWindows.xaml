@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="FirstProgramWPF" Height="450" Width="800">
-    <Grid Background="Gray">
+    <Grid Background="	#BA55D3">
+        
         <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550"
                 CornerRadius="20">
             <Border.Effect>
@@ -15,12 +16,12 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                <TextBlock x:Name="examletext" FontWeight="Bold" Margin="0 0 0 20"/>
 
                 <Grid>
-                    <Button HorizontalAlignment="Left" Content="Регистрация" Click="OpenReg"/>
-                    <Button HorizontalAlignment="Right" Content="Войти" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Left" Content="Регистрация" Click="OpenReg" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button HorizontalAlignment="Right" Content="Войти"/>
                 </Grid>
+                <TextBox x:Name="Error" FontSize="14" FontWeight="Light"   Visibility="Collapsed"/>
                 <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <PasswordBox x:Name="passbox_1" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <Button Content="Войти " Margin="0 20" Click="Button_Auth_Click"/>

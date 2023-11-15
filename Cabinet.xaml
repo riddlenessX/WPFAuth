@@ -5,9 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FirstWPF"
         mc:Ignorable="d"
+
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="FirstProgramWPF" Height="450" Width="800">
-    <Grid Background="Gray">
+
+    <Window.Resources>
+        <Style x:Key="MaterialDataGridStyle" TargetType="DataGrid">
+            <Setter Property="materialDesign:DataGridAssist.ColumnHeaderPadding" Value="8" />
+            <Setter Property="materialDesign:DataGridAssist.CellPadding" Value="10" />
+            <!-- Задаем фон ячеек -->
+            <!-- Другие свойства из MaterialDesignThemes для стилизации DataGrid -->
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="Window" Background="	#BA55D3">
+        
         <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550"
                 CornerRadius="20">
             <Border.Effect>
@@ -15,8 +27,13 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Личный кабинет" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                <TextBlock x:Name="examletext" FontWeight="Bold" Margin="0 0 0 20" Height="159"/>
-
+                <DataGrid x:Name="table" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Логин" Binding="{Binding login}"/>
+                        <DataGridTextColumn Header="Пароль" Binding="{Binding password}" />
+                        <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
                 <Grid>
                     <Button HorizontalAlignment="Right" Click="Logout" Content="Выйти" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
