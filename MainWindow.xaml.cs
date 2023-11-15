@@ -27,11 +27,6 @@ namespace FirstWPF
             InitializeComponent();
             db = new ApplicationContext();
 
-            List<User> users = db.Users.ToList();
-            string str = "";
-            foreach (User user in users)
-                str += "Login" + user.login + "|";
-            examletext.Text = str;
         }
 
         private void OpenAuth(object sender, RoutedEventArgs e)
@@ -39,7 +34,6 @@ namespace FirstWPF
             AuthWindows auth = new AuthWindows();
             auth.Show();
             this.Close();
-
         }
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)

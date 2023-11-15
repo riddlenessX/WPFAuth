@@ -1,12 +1,26 @@
-﻿<Window x:Class="WpfApp1.Cabinet"
+﻿<Window x:Class="FirstWPF.Cabinet"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:FirstWPF"
         mc:Ignorable="d"
-        Title="Cabinet" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="FirstProgramWPF" Height="450" Width="800">
+    <Grid Background="Gray">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550"
+                CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="80" Color="Gray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Личный кабинет" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <TextBlock x:Name="examletext" FontWeight="Bold" Margin="0 0 0 20" Height="159"/>
+
+                <Grid>
+                    <Button HorizontalAlignment="Right" Click="Logout" Content="Выйти" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

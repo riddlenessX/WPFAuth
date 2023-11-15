@@ -15,7 +15,6 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Здравствуйте!" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
-                <TextBlock x:Name="examletext" FontWeight="Bold" Margin="0 0 0 20"/>
 
                 <Grid>
                     <Button HorizontalAlignment="Left" Content="Регистрация"/>

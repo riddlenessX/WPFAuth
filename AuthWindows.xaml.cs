@@ -59,7 +59,12 @@ namespace FirstWPF
                 }
 
                 if (authUser != null)
+                {
                     MessageBox.Show("Вы успешно вошли!");
+                    Cabinet cabinet = new Cabinet();
+                    cabinet.Show();
+                    this.Close();
+                }
                 else MessageBox.Show("Данные введены неккоректно");
             }
         }
